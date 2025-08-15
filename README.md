@@ -68,10 +68,17 @@ A Progressive Web App designed for tracking daily water intake with offline supp
 
 ## Installation
 
-### Mobile Installation
-1. Open the website in your browser
-2. Tap "Add to Home Screen" or "Install"
+### Android Installation
+1. Open the website in Chrome browser
+2. Tap "Add to Home Screen" or "Install" when prompted
 3. Confirm installation, app will appear on desktop
+4. Full PWA features including offline mode and notifications
+
+### iOS Installation (Limited Support)
+1. Open the website in Safari
+2. Tap the Share button
+3. Select "Add to Home Screen"
+4. Note: Limited PWA features, some functions may not work as expected
 
 ### Desktop Installation
 1. Open website in Chrome or Edge
