@@ -1,32 +1,17 @@
 # Daily Water Monitor
 
-A simple PWA for tracking daily water intake.
+PWA 喝水追蹤 app
 
-## Features
+## 功能
 
-- 💧 Track water intake
-- 📊 View statistics
-- 🔔 Smart reminders
-- 📱 Works offline
+- 記錄喝水量
+- 統計數據  
+- 提醒功能
+- 離線使用
 
-## Tech Stack
-
-- TypeScript
-- Vite
-- PWA
-
-## Getting Started
+## 開發
 
 ```bash
 npm install
 npm run dev
 ```
-
-Build for production:
-```bash
-npm run build
-```
-
-## License
-
-MIT
