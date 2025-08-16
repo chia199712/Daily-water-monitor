@@ -4,6 +4,7 @@
 
 export interface UserSettingsData {
   weight: number;
+  height: number;
   activityLevel: 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active';
   reminderEnabled: boolean;
   reminderInterval: number;
@@ -28,6 +29,7 @@ export class UserSettings {
   private getDefaultSettings(): UserSettingsData {
     return {
       weight: 70,
+      height: 170,
       activityLevel: 'moderate',
       reminderEnabled: true,
       reminderInterval: 60,
@@ -97,9 +99,29 @@ export class UserSettings {
   }
 
   /**
-   * Calculate recommended water intake based on weight and activity level
+   * Validate height input
    */
-  calculateRecommendedWaterIntake(
+  validateHeight(height: number): void {
+    if (height <= 0) {
+      throw new Error('身高必須大於0');
+    }
+    if (height < 100 || height > 250) {
+      throw new Error('身高必須在100-250cm之間');
+    }
+  }
+
+  /**
+   * Calculate recommended water intake based on height and weight
+   * Formula: (height(cm) + weight(kg)) × 10CC
+   */
+  calculateRecommendedWaterIntake(height: number, weight: number): number {
+    return (height + weight) * 10;
+  }
+
+  /**
+   * Calculate recommended water intake based on weight and activity level (legacy method)
+   */
+  calculateRecommendedWaterIntakeByActivity(
     weight: number, 
     activityLevel: 'sedentary' | 'light' | 'moderate' | 'active' | 'very_active'
   ): number {
